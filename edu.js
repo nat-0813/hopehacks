@@ -66,3 +66,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.get('/', (req,res) => { //// The root route ("/") is defined using app.get(). When a GET request is made to the root route, the server responds by sending the edu.html file
     res.sendFile(__dirname + '/edu.html');//pulling the API to the edu.html
 })
+
+app.post('/', (req,res) => {
+    
+}
