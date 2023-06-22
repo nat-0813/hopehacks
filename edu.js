@@ -7,13 +7,13 @@ const dataContainer = document.getElementById('dataContainer');
 searchForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const searchQuery = searchInput.value;
-  const apiUrl = `https://greeningschools-uskzqsuua3.p.rapidapi.com/search?query=${searchQuery}`;
+  const apiUrl = `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI`
 
   try {
     const response = await fetch(apiUrl, {
       headers: {
-        'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY',
-        'X-RapidAPI-Host': 'greeningschools-uskzqsuua3.p.rapidapi.com'
+        'X-RapidAPI-Key': '6c097732b3msh0e449dff7fd3753p1dc597jsn4bdefd6b7870',
+    'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
       }
     });
     const data = await response.json();
@@ -57,16 +57,3 @@ function populateData(data) {
 }
 
 
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const https = require('https');
-
-app.use(bodyParser.urlencoded({extended: true}))
-app.get('/', (req,res) => { //// The root route ("/") is defined using app.get(). When a GET request is made to the root route, the server responds by sending the edu.html file
-    res.sendFile(__dirname + '/edu.html');//pulling the API to the edu.html
-})
-
-app.post('/', (req,res) => {
-    
-}
